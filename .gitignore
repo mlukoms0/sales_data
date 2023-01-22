@@ -1,0 +1,6 @@
+.APP/users/
+.venv/
+.APP/password.env
+venv/
+APP/users/
+APP/password.env
