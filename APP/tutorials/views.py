@@ -68,7 +68,7 @@ def tutorial_list(request):
         return JsonResponse(
             {
                 'message':
-                '{} Tutorials were deleted successfully!'.format(count[0])
+                '{} Records were deleted successfully!'.format(count[0])
             },
             status=status.HTTP_204_NO_CONTENT)
 
@@ -78,7 +78,7 @@ def tutorial_detail(request, pk):
     try:
         tutorial = Tutorial.objects.get(pk=pk)
     except Tutorial.DoesNotExist:
-        return JsonResponse({'message': 'The tutorial does not exist'},
+        return JsonResponse({'message': 'The record does not exist'},
                             status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
@@ -96,14 +96,14 @@ def tutorial_detail(request, pk):
 
     elif request.method == 'DELETE':
         tutorial.delete()
-        return JsonResponse({'message': 'Tutorial was deleted successfully!'},
+        return JsonResponse({'message': 'Record was deleted successfully!'},
                             status=status.HTTP_204_NO_CONTENT)
 
 
-@api_view(['GET'])
+""" @api_view(['GET'])
 def tutorial_list_published(request):
     tutorials = Tutorial.objects.filter(published=True)
 
     if request.method == 'GET':
         tutorials_serializer = TutorialSerializer(tutorials, many=True)
-        return JsonResponse(tutorials_serializer.data, safe=False)
+        return JsonResponse(tutorials_serializer.data, safe=False) """
