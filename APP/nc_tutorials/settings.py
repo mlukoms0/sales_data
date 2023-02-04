@@ -77,11 +77,10 @@ WSGI_APPLICATION = 'nc_tutorials.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': decouple.config('DB_NAME'),
-        'USER': decouple.config('DB_USER'),
-        'PASSWORD': decouple.config('DB_PASSWORD'),
-        'HOST': decouple.config('DB_HOST'),
-        'PORT': decouple.config('DB_PORT'),
+        'NAME': "postgres",
+        'USER': "ulhdzfnvbu",
+        'PASSWORD': "SK2LC6067KZPGM8D",
+        'HOST': "sales-data-server.postgres.database.azure.com",
     }
 }
 
